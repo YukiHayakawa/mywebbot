@@ -17,9 +17,13 @@ http://blog.minato.jp.net/entry/linebot
 https://mywebbot.herokuapp.com/
 
 手順
+
 1.Microsoft Bot Framework登録
+
 2.デプロイ環境作成
+
 3.bot作成
+
 4.Direct Line API でカスタマイズ
 
 ## 1.Microsoft Bot Framework登録
