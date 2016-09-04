@@ -25,12 +25,20 @@ server.post('/api/messages', connector.listen());
 // Bots Dialogs
 //=========================================================
 
-bot.dialog('/', function (session) {
-   session.send('Hello World');
-});
+bot.dialog('/', new builder.IntentDialog()
+	.matches(/^こんにちは/i, function (session) {
+		session.send("こんにちは");
+	})
+	.matches(/^名前は/i, function (session) {
+		session.send('私はbot!')
+	})
+	.onDefault(function (session) {
+		session.send("もう1度言って下さい");
+	}));
+
 
 
 server.get(/.*/, restify.serveStatic({
-    'directory': './static/',
-    'default': 'index.html'
+	'directory': './static/',
+	'default': 'index.html'
 }));
